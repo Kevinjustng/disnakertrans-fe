@@ -8,58 +8,58 @@ export function PimpinanOpd({
   jabatan,
 }: Readonly<PimpinanProps>) {
   return (
-    <div className="bg-gray-50 py-24 px-8"> {/* Increased padding */}
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between gap-16"> {/* More gap */}
-          {/* LEFT SIDE - Text */}
-          <div className="flex-1 space-y-6"> {/* Reduced vertical spacing */}
-            {jabatan && (
-              <h2 className="text-gray-800 text-3xl font-semibold italic border-b-2 border-black inline-block pb-1" style={{ fontFamily: 'serif' }}>
+    <div className="bg-white">
+      {/* Title Section */}
+      <div className="bg-white">
+        {/* White spacer to separate from PostList */}
+        <div className="h-35 bg-white"></div>
 
-                {jabatan}
-              </h2>
-            )}
+        <section className="text-center py-12 bg-white px-4">
+          <h2 className="font-light tracking-[0.2143rem] text-[1.5rem] sm:text-[1.875rem] text-gray-600 uppercase mb-2 leading-[1.2]">
+            DISNAKERTRANS SULUT
+          </h2>
+          <h1 className="font-bold tracking-[0.125rem] text-[2rem] sm:text-[3rem] text-gray-800 mb-4 leading-[1.2]">
+            PROFIL KEPALA DINAS
+          </h1>
+          <p className="italic font-normal tracking-[0.0625rem] text-base sm:text-[1.125rem] text-gray-600 leading-relaxed mb-4">
+            PROVINSI SULAWESI UTARA.
+          </p>
+          <div className="w-20 h-[1px] bg-gray-400 mx-auto"></div>
+        </section>
+      </div>
 
-            <div className="space-y-4">
-              <h1 className="text-gray-900 text-4xl xl:text-5xl font-bold leading-tight">
-                {namalengkap}
-              </h1>
-              <p className="text-gray-600 text-xl">
-                {pangkat}
-              </p>
-            </div>
-          </div>
+      {/* Profile Section */}
+      <div className="bg-gray-50 py-16 sm:py-24 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16">
+            {/* LEFT SIDE - Text */}
+            <div className="flex-1 space-y-6 text-center lg:text-left">
+              {jabatan && (
+                <h2
+                  className="text-gray-800 text-2xl sm:text-3xl font-semibold italic border-b-2 border-black inline-block pb-1"
+                  style={{ fontFamily: "serif" }}
+                >
+                  {jabatan}
+                </h2>
+              )}
 
-          {/* RIGHT SIDE - Image Container */}
-          <div className="flex-shrink-0 w-[420px] h-[520px] relative group"> {/* Slightly smaller but still prominent */}
-            {/* Glass frame */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl"></div>
-              <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <div className="absolute -inset-8 bg-gradient-to-tr from-transparent via-blue-100/30 to-transparent opacity-70 group-hover:opacity-100 group-hover:animate-[liquid_8s_linear_infinite]"></div>
-                <div className="absolute -inset-8 bg-gradient-to-br from-transparent via-red-100/20 to-transparent opacity-70 group-hover:opacity-100 group-hover:animate-[liquid_6s_linear_infinite] delay-100"></div>
+              <div className="space-y-4">
+                <h1 className="text-gray-900 text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight">
+                  {namalengkap}
+                </h1>
+                <p className="text-gray-600 text-lg sm:text-xl">{pangkat}</p>
               </div>
-              <div className="absolute inset-0 rounded-2xl border-2 border-white/50 pointer-events-none"></div>
-              <div className="absolute inset-1 rounded-xl border border-white/30 pointer-events-none"></div>
             </div>
 
-            {/* Profile Image */}
-            <div className="absolute inset-4 rounded-xl overflow-hidden transition-all duration-700 group-hover:scale-[0.98]">
+            {/* RIGHT SIDE - Image Container */}
+            <div className="flex-shrink-0 w-full sm:w-[420px] h-[400px] sm:h-[520px] relative group rounded-2xl overflow-hidden shadow-lg">
               <StrapiImage
                 src={image.url}
                 alt={image.alternativeText || `${namalengkap}'s profile picture`}
                 width={420}
                 height={520}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover transform scale-110 transition-transform duration-700 ease-out group-hover:scale-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white/20 pointer-events-none"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_60%,white/90%)] pointer-events-none mix-blend-overlay"></div>
-            </div>
-
-            {/* Reflection Spots */}
-            <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-              <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-white/30 blur-xl group-hover:animate-[pulse_4s_ease-in-out_infinite]"></div>
-              <div className="absolute bottom-24 right-24 w-24 h-24 rounded-full bg-white/40 blur-lg group-hover:animate-[pulse_3s_ease-in-out_infinite] delay-300"></div>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/Components/layout/Header";
-import { getGlobalSettings } from "@/Data/loaders";
 import { Footer } from "@/Components/layout/Footer";
+import { getGlobalSettings } from "@/Data/loaders";
 
 export const metadata: Metadata = {
   title: "DinasPMD - Dinas Pemberdayaan Masyarakat dan Desa",
@@ -19,7 +19,7 @@ export default async function RootLayout({
 
   try {
     const globalData = await getGlobalSettings();
-    console.log ("Global Data:", globalData);
+    console.log("Global Data:", globalData);
 
     if (globalData?.data?.header) {
       headerData = globalData.data.header;
@@ -33,15 +33,19 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="id">
-      <body>
+    <html lang="id" className="h-full overflow-x-hidden">
+      <body className="bg-white text-black flex flex-col min-h-full m-0 p-0 overflow-x-hidden">
+        {/* Header */}
         {headerData ? (
           <Header data={headerData} />
         ) : (
           <div className="bg-gray-100 p-4 text-center">Loading header...</div>
         )}
-        <main>{children}</main>
 
+        {/* Main content */}
+        <main className="flex-grow">{children}</main>
+
+        {/* Footer */}
         {footerData ? (
           <Footer data={footerData} />
         ) : (

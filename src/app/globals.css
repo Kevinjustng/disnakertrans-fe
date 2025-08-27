@@ -19,8 +19,88 @@
   }
 }
 
+/* Ensure all elements use border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #F9FAFB !important;
+  color: #171717 !important;
+  min-height: 100vh;
+}
+
+/* Prevent default browser margins/padding */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve WYSIWYG output from Strapi */
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+  @apply my-4 text-gray-700 leading-relaxed;
+}
+
+.prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+  @apply font-bold text-gray-900 mt-8 mb-4;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+  @apply border-l-4 border-blue-500 pl-6 my-6 text-lg italic text-gray-800 bg-blue-50 p-4 rounded-r-lg;
+}
+
+.prose :where(img):not(:where([class~="not-prose"] *)) {
+  @apply rounded-lg max-w-full h-auto mx-auto my-6 border border-gray-200;
+}
+
+/* Add animation keyframes */
+@keyframes heroZoom {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-heroZoom {
+  animation: heroZoom 20s ease-in-out infinite;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-popIn {
+  animation: popIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 1.5s ease forwards;
 }
