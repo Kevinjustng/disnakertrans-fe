@@ -5,8 +5,8 @@ import { Footer } from "@/Components/layout/Footer";
 import { getGlobalSettings } from "@/Data/loaders";
 
 export const metadata: Metadata = {
-  title: "DinasPMD - Dinas Pemberdayaan Masyarakat dan Desa",
-  description: "Website Resmi Dinas Pemberdayaan Masyarakat dan Desa",
+  title: "Disnakertrans Provinsi Sulawesi Utara - dinaskertrans",
+  description: "Dinas Tenaga Kerja mempunyai tugas menyelenggarakan urusan pemerintahan di bidang Tenaga Kerja mempunyai fungsi: perumusan kebijakan daerah di bidang Tenaga Kerja.",
 };
 
 export default async function RootLayout({

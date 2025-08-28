@@ -33,7 +33,7 @@ export default async function HomeRoute() {
   const pimpinanIdx = blocks.findIndex(
     (b: Block) => b.__component === "blocks.pimpinan-opd"
   );
-
+ 
   return (
     <>
       {/* Render blocks before hero-section */}
